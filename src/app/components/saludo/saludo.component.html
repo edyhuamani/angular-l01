@@ -1,0 +1,16 @@
+<h1>Hola {{nombre}}</h1>
+<!--
+<button id="emit-alerta" (click)="alertaSaludo()">
+    Muestra alerta
+</button>
+-->
+<button id="emit-alerta" (click)="enviarMensajeAlPadre()">
+    enviar mensaje de alerta
+</button>
+
+<h3 id="usuario" [innerText]="nombre" [ngClass]="nombre=='Anonimo'?'anonimo':'saludo'">
+
+</h3>
+
+<!--Hacer uso de componente listbasica-->
+<app-lista-basica></app-lista-basica>
