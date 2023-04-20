@@ -1,2 +1,67 @@
-<p>Lista de elementos</p>
-<p>Aqui vamos a iterar sobre una lista y mostrar varios elementos</p>
+<p [ngStyle]="{color:'tomato',fontWeight:'bold'}">Lista de elementos</p>
+<p ngClass="underlined">Aqui vamos a iterar sobre una lista y mostrar varios elementos</p>
+
+<p [ngClass]="['underlined','small']">aun no tienes elementos en la lista</p>
+
+<p [ngClass]="{underlined:false,small:true}">Te recomendamos crear un elemento</p>
+
+<button (click)="cambiarCargando()" >{{cargando?'Terminar Carga':'Iniciar Carga'}}</button>
+
+<p
+*ngIf="cargando">
+  Cargando...
+</p>
+
+<ng-container *ngIf="!cargando; else templateEspera">
+  <p>Todo Listo!</p>
+</ng-container>
+<ng-template #templateEspera>
+  <p>Cargando...</p>
+  <p>Espere a que termine el proceso</p>
+</ng-template>
+
+<div *ngFor="let producto of listaElementos; let i=index; let even = even; let odd = odd;" >
+  <div [ngStyle]="even?{backgroundColor:'blue',color:'white',fontweight:'bold',padding:'10px'}:{backgroundColor:'green',color:'white',fontweight:'bold',padding:'10px'}" class="producto">
+  <p>ID: {{i}}</p>
+  <p>{{producto.nombre}}-{{producto.precio}}Euros</p>
+  <p>{{producto.descripcion}}</p>
+  </div>
+</div>
+
+<div *ngIf="mostrarMensaje">
+  Mensaje de Prueba
+</div>
+<!--
+*<div [ngSwitch]="opcion">
+  <div *ngSwitchCase="expression">output</div>
+  <div *ngSwitchDefault>output2</div>
+</div>
+-->
+<div [ngSwitch]="opcion">
+  <p [id]="1" *ngSwitchCase="1">Haz escogido la Opcion 1 </p>
+  <p [id]="1" *ngSwitchCase="2">Haz escodigo la Opcion 2 </p>
+  <p [id]="1" *ngSwitchCase="3">Haz escodigo la Opcion 3 </p>
+  <p [id]="1" *ngSwitchCase="4">Haz escodigo la Opcion 4 </p>
+  <p *ngSwitchDefault class="cerrar">Ninguna de las opciones en valida</p>
+|
+</div>
+
+<div>
+  <input type="radio" name="opcion" (click)="escogerOpcion(1)"
+  >Opcion 1
+  <input type="radio" name="opcion" (click)="escogerOpcion(2)"
+  >Opcion 2
+  <input type="radio" name="opcion" (click)="escogerOpcion(3)"
+  >Opcion 3
+  <input type="radio" name="opcion" (click)="escogerOpcion(4)"
+  >Opcion 4
+</div>
+
+<!--Productos de mas de 10 -->
+<div *ngFor="let producto of listaElementos; let i=index; let even = even; let odd = odd;" >
+  <div  *ngIf="producto.precio>10" [ngStyle]="even?{backgroundColor:'blue',color:'white',fontweight:'bold',padding:'10px'}:{backgroundColor:'green',color:'white',fontweight:'bold',padding:'10px'}" class="producto">
+  <p>ID: {{i}}</p>
+  <p>{{producto.nombre}}-{{producto.precio}}Euros</p>
+  <p>{{producto.descripcion}}</p>
+  </div>
+</div>

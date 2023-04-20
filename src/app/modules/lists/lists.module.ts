@@ -12,8 +12,11 @@ import { ListaBasicaComponent } from './lista-basica/lista-basica.component';
     CommonModule
   ],
   exports: [
-    // Exporamos clase - componentes 
+    // Exporamos clase - componentes
     ListaBasicaComponent
-  ]  
+  ]
 })
-export class ListsModule { }
+export class ListsModule {
+
+
+}
