@@ -1,0 +1,36 @@
+<!--MATERTIAL vinculo con el formulario principal-->
+<form [formGroup]="miFormulario" class="contenedor">
+  <!--Formulario reactivo---->
+  <!--pre-visualizacion-->
+  <h2>Datos del formulario</h2>
+  <!--usaremos un pipe-->
+  <p>{{ miFormulario.value | json}}</p>
+
+  <!--CAMPOS DEL FORMULARIO-->
+  <mat-form-field appearance="fill">
+    <input matInput type="text" placeholder="Nombre" formControlName="nombre">
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <input matInput type="text" placeholder="Apellidos" formControlName="apellidos">
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <input matInput type="email" placeholder="Email" formControlName="email">
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <input matInput type="text" placeholder="Telfono" formControlName="telefono">
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <input matInput type="text"  placeholder="Direccion" formControlName="direccion">
+    <mat-error>This field is required</mat-error>
+  </mat-form-field>
+
+
+</form>

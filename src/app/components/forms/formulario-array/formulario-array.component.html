@@ -1,0 +1,27 @@
+<form [formGroup]="miFormularioArray">
+  <h2>Datos del formulario Array</h2>
+  <!--usaremos un pipe-->
+  <p>{{ miFormularioArray.value | json}}</p>
+
+
+    <mat-form-field appearance="fill">
+      <input matInput type="text" placeholder="Nombre" formControlName="nombre">
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <input matInput type="text" placeholder="Apellidos" formControlName="apellidos">
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <div formArrayName="telefonos">
+      <div *ngFor="let telefono of telefonosFomulario.controls; let i=index" [formGroupName]="i"> <!-- OJO CON FORMULARIO.CONTROLS-->
+        <h5>Telefono- {{i}}</h5>
+        <input matInput type="text" placeholder="Prefijo" formControlName="prefijo">
+        <input matInput type="text" placeholder="Numero"  formControlName="numero">
+        <button (click)="eliminarTelefonos(i)">BORRAR</button>
+      </div>
+    </div>
+    <!--BUTTON PARA ANIADIR TELEFONOS-->
+    <button (click)="anadirTelefonos()">Aniadir un  nuevo telefono</button>
+</form>

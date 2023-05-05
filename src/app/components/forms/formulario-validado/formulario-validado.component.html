@@ -1,0 +1,58 @@
+<h4>Formulario Validado</h4>
+<form [formGroup]="miFormularioValidado" (submit)=" enviarFormulario()">
+  <!-- -->
+  {{ miFormularioValidado.value | json }}
+  <div class="forms">
+    <mat-form-field appearance="fill">
+      <input placeholder="Nombre" formControlName="nombre" />
+    </mat-form-field>
+    <div *ngIf="nombre?.errors?.['required'] && nombre?.touched">
+      <p [ngStyle]="{ color: 'tomato' }">El campo nombre es obligatorio</p>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <input placeholder="Apellidos" formControlName="apellidos" />
+    </mat-form-field>
+    <div *ngIf="apellidos?.errors?.['required'] && apellidos?.touched">
+      <p [ngStyle]="{ color: 'tomato' }">El campo apellidos es obligatorio</p>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <input type="number" placeholder="Edad" formControlName="edad" />
+    </mat-form-field>
+    <div *ngIf="edad?.errors?.['min'] && edad?.touched">
+      <p [ngStyle]="{ color: 'tomato' }">
+        El campo edad no puede ser menor a 18. No puedes registarte con
+        ((edad?.errors?.[min].actual))
+      </p>
+    </div>
+    <div *ngIf="edad?.errors?.['max'] && edad?.touched">
+      <p [ngStyle]="{ color: 'tomato' }">
+        El campo edad no puede ser mayor a 99. No puedes registarte con
+        ((edad?.errors?.[max].actual))
+      </p>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <input type="email" placeholder="Email" formControlName="email" />
+    </mat-form-field>
+    <div *ngIf="email?.errors?.['required'] && email?.touched">
+      <p [ngStyle]="{ color: 'tomato' }">El campo EMAIL es incorrecto</p>
+    </div>
+    <mat-form-field appearance="fill">
+      <input type="password" placeholder="Password" formControlName="password" />
+    </mat-form-field>
+    <div *ngIf="password?.errors?.['required'] && password?.touched">
+      <p [ngStyle]="{ color: 'tomato' }">El campo PASSWORD es incorrecto</p>
+    </div>
+    <mat-form-field >
+      <input type="checkbox" placeholder="Acepta" formControlName="acepta" />
+    </mat-form-field>
+    <div *ngIf="acepta?.errors?.['required'] && acepta?.touched">
+      <p [ngStyle]="{ color: 'tomato' }">El campo ACEPTA es incorrecto</p>
+    </div>
+  </div>
+  <button type="submit" [disabled]="miFormularioValidado.invalid">
+    Enviar
+  </button>
+</form>

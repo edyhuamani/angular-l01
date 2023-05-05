@@ -1,0 +1,44 @@
+{
+  "results": [
+    {
+      "gender": "female",
+      "name": { "title": "Ms", "first": "Clesisniara", "last": "Ferreira" },
+      "location": {
+        "street": { "number": 3370, "name": "Rua Minas Gerais " },
+        "city": "Balneário Camboriú",
+        "state": "Paraíba",
+        "country": "Brazil",
+        "postcode": 17480,
+        "coordinates": { "latitude": "-74.6728", "longitude": "33.4912" },
+        "timezone": { "offset": "+5:45", "description": "Kathmandu" }
+      },
+      "email": "clesisniara.ferreira@example.com",
+      "login": {
+        "uuid": "27ec5618-1ed6-4ede-9dd9-f6c899e900cb",
+        "username": "organiczebra451",
+        "password": "stumpy",
+        "salt": "53A614MY",
+        "md5": "43f2709d1b229b69e2fe9c7bb78f813c",
+        "sha1": "6b3976b8421b8ac1d682e3ec54d96279acd6ef68",
+        "sha256": "5ccf145bf38a30d28af20b7866241ce68e9450c1c31158197f6962231eeaafc5"
+      },
+      "dob": { "date": "1988-10-31T17:12:08.715Z", "age": 34 },
+      "registered": { "date": "2012-09-21T14:04:48.504Z", "age": 10 },
+      "phone": "(58) 5007-7994",
+      "cell": "(33) 5522-3552",
+      "id": { "name": "CPF", "value": "843.838.383-53" },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/women/59.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/women/59.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/women/59.jpg"
+      },
+      "nat": "BR"
+    }
+  ],
+  "info": {
+    "seed": "1cd4729ddee29be9",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}

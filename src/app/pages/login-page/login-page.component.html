@@ -1,0 +1,11 @@
+<!---No olvidar los [()] en los ngmodel-->
+<h1>Pagina de Login</h1>
+<!--Formulario de Login-->
+
+
+<input [(ngModel)]="email" type="email" placeholder="Email"/>
+<input [(ngModel)]="password" type="password" placeholder="Password"
+/>
+
+<button mat-raised-button color="primary"(click)="loginUser()">Login</button>
+

@@ -1,0 +1,31 @@
+<!-- routerLink -->
+<!-- state esta pasando los datos del contacto como un modelview -->
+<h1>Tus Contactos</h1>
+<!--Listar los contactos y poder navegar al pinchar en uno de ellos al detalle-->
+<!--<div *ngFor="let contacto of listaContactos">-->
+<div *ngFor="let contacto of listaRandomContactos">
+  <div routerLink="/contacts/{{ contacto.id }}" [state]="{ data: contacto }">
+    <h6 class="contacto">{{ contacto!.name!.first }}</h6>
+    <h6>{{ contacto.email }}</h6>
+    <h6>{{ contacto.gender }}</h6>
+    <button (click)="volverAHome(contacto)">
+      Selecciona como Amigo invisible
+    </button>
+  </div>
+  <!--
+  <p>{{contacto.id}}</p>
+  <p>{{contacto.nombre}}</p>
+  <p>{{contacto.apellidos}}</p>
+  <p>{{contacto.email}}</p>
+  -->
+</div>
+
+<ng-container
+  *ngIf="filtroSexo == 'mujer' || filtroSexo == 'hombre'; else completo"
+>
+  <p>Mostrando lista filtrada</p>
+  <p>Mostrando amigos"{{ filtroSexo }}"</p>
+</ng-container>
+<ng-template #completo> </ng-template>
+
+<p>Mostrando lista filtrada</p>

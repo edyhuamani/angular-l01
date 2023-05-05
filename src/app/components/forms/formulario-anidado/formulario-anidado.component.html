@@ -1,0 +1,33 @@
+<h1>Formulario Anidado</h1>
+<form [formGroup]="miFomularioAnidado" class="contenedor">
+  <h3>Datos en vivo del formulario</h3>
+  <p>{{ miFomularioAnidado.value | json}}</p>
+  <h4>Telefono fijo</h4>
+  <div formGroupName="telefonoFijo">
+
+    <mat-form-field appearance="fill">
+      <input matInput type="text" placeholder="Prefijo" formControlName="prefijo">
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <input matInput type="text" placeholder="Numero" formControlName="numero">
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+  </div>
+
+  <h4>Telefono movil</h4>
+  <div formGroupName="telefonoMovil">
+    <mat-form-field appearance="fill">
+      <input matInput type="text" placeholder="Prefijo" formControlName="prefijo">
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <input matInput type="text" placeholder="Numero" formControlName="numero">
+      <mat-error>This field is required</mat-error>
+    </mat-form-field>
+  </div>
+  <button (click)="registrarDatos()">REGISTRAR INFORMACION</button>
+
+</form>
