@@ -5,11 +5,13 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   templateUrl: './ejemplo-pipes.component.html',
   styleUrls: ['./ejemplo-pipes.component.scss']
 })
-export class EjemploPipesComponent implements OnInit,OnDestroy{
+export class EjemploPipesComponent implements OnInit, OnDestroy {
 
-  dob :Date =new Date(1991,9,14)
-  cambio:Boolean =true
-  constructor(){}
+  dob: Date = new Date(1991, 9, 14)
+  cambio: Boolean = true
+  nombre: string ="Martin"
+
+  constructor() { }
 
   ngOnInit(): void {
     console.log("--------------ngOnInit-----------------")
@@ -18,11 +20,11 @@ export class EjemploPipesComponent implements OnInit,OnDestroy{
     console.log("-------------ngOnDestroy------------------")
   }
 
-  cambiarFormato(){
-    this.cambio=!this.cambio
+  cambiarFormato() {
+    this.cambio = !this.cambio
   }
 
-  get dateFormat(){
-    return this.cambio ? 'shortFate': 'fullDate'
+  get dateFormat() {
+    return this.cambio ? 'shortDate' : 'fullDate'
   }
 }

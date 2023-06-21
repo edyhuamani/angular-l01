@@ -2,10 +2,19 @@
 <h2> Pipes para fechas</h2>
 <p>Mi cumpleaños es {{dob }}</p>
 <p>Mi cumpleaños con PIPE date basic  {{dob | date : "dd/MM/yyyy"}}</p>
-
-<p>Mi cumpleaños con PIPE date short  {{dob | date : "ShortDate"}}</p>
-<p>Mi cumpleaños con PIPE date full  {{dob | date : "fullDate"}}</p>
-
+<p>Mi cumpleaños con PIPE date short  {{dob | date : "shortDate"}}</p>
+<p>Mi cumpleaños con PIPE date full   {{dob | date : "fullDate"}}</p>
 <p>Mi cumpleaños con PIPE date basic  {{dob | date : dateFormat}}</p>
-<button (click)="cambiarFormato()">Cambiar Formato a {{!cambio?'ShortDate':'fullDate'}}</button>
+<!--Mayusculas / minusculas -->
 
+<h4>Bienvenido {{nombre | uppercase}}</h4>
+<h4>Nombre de usuario @{{nombre | lowercase}}</h4>
+
+<p>Mi cumpleaños con PIPE DATE Short Mayus es {{dob | date : dateFormat | uppercase}}</p>
+<p>Mi cumpleaños con PIPE DATE Short Mayus es {{dob | date : dateFormat | lowercase}}</p>
+
+<!--Pipe peronalizado (Multiplica)-->
+<p>Resultado : {{2 | multiplica:10 }}</p>
+
+
+<button (click)="cambiarFormato()">Cambiar Formato a {{!cambio?'shortDate':'fullDate'}}</button>

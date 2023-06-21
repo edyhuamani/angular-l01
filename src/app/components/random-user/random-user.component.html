@@ -2,13 +2,14 @@
 <!--
 {{randomContact | json }}
 -->
+<!--estructura if else -->
 <ng-container *ngIf="randomContact else noContact" >
   <p>{{randomContact.name!.title}}</p>
   <p>{{randomContact.name!.first}}</p>
   <p>{{randomContact.name!.last}}</p>
 </ng-container>
 <ng-template #noContact>
-  <h3>Cargando Contacto aletorio</h3>
+  <h3>Cargando Contacto aleatorio..</h3>
   <mat-spinner></mat-spinner>
 </ng-template>
 
@@ -26,8 +27,6 @@
   <mat-card-content>
     <p>
       {{randomContact!.location.country}}
-
-
     </p>
   </mat-card-content>
   <mat-card-actions>

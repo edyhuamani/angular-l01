@@ -11,7 +11,7 @@ export class ContactService {
   listaContactos : IContacto[] =LISTACONTACTOS;
 
   constructor() { }
-
+  // Permite lanzar un request a travez de promise
   obtenerContactos (sexo:string):Promise<IContacto[]> {
     console.log("--------------obtenerContactos--------------")
 

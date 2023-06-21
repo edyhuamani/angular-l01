@@ -33,6 +33,7 @@ export class RandomUserService implements OnInit,OnDestroy{
     );
   }
 
+  // Permite obtener
   obtenerRandomContact ():Observable<any>{
 
     //return this.http.get("https://randomuser.me/api");

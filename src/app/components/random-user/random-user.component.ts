@@ -10,6 +10,8 @@ import { IRandomContact, Results } from 'src/app/models/randomuser.interface';
 export class RandomUserComponent implements OnInit {
 
   randomResults:Results | undefined
+
+  //@INPUT , RECIBE DATOS DE UN COMPONENTE PADRE
   @Input() randomContact:IRandomContact | undefined
 
   constructor(

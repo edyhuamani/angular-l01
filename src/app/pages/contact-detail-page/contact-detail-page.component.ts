@@ -12,7 +12,7 @@ import { NombreCompletoPipe } from 'src/app/pipes/nombre-completo.pipe';
 export class ContactDetailPageComponent implements OnInit{
 
   id:any
-  contacto:IRandomContact | undefined
+  contacto:IRandomContact | undefined | any
   /*
   contacto:IContacto ={
     id:0,
@@ -27,6 +27,7 @@ export class ContactDetailPageComponent implements OnInit{
   constructor(
     private router:Router,
     private route:ActivatedRoute
+
   ){
 
   }
@@ -48,7 +49,7 @@ export class ContactDetailPageComponent implements OnInit{
 
   retornarListaContactos():void{
     console.log("------retornarListaContactos-----")
-    this.router.navigate(['contacts'])
+    this.router.navigate(['/dashboard/contacts'])
   }
 
 }

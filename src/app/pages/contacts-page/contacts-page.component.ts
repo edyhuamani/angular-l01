@@ -15,8 +15,11 @@ import { IRandomContact, Results } from 'src/app/models/randomuser.interface';
 })
 export class ContactsPageComponent implements OnInit {
 
+  cargando: boolean = true
+  filtroSexo: string = 'todos'
   listaContactos: IContacto[] = []
   listaRandomContactos: IRandomContact[] = []
+
 
   /*
   listaContactos :IContacto[] =[
@@ -46,7 +49,7 @@ export class ContactsPageComponent implements OnInit {
   ]
   */
 
-  filtroSexo: string = 'todos'
+
 
   constructor(
     private router: Router,
@@ -59,13 +62,15 @@ export class ContactsPageComponent implements OnInit {
 
   ngOnInit(): void {
     console.log("-------onInit------")
+
     //Obtener queryparams
     let sexo = '';
     this.route.queryParams.subscribe((params: any) => {
       console.log('QueryParam all ' + JSON.stringify(params));
       console.log('QueryParam ' + params.sexo);
       sexo = params.sexo
-      if (params.sexo) {
+
+      if (params.sexo && params.sexo!='todos') {
         this.filtroSexo = params.sexo;
         if (params.sexo=='female' || params.sexo=='male'){
 
@@ -80,11 +85,15 @@ export class ContactsPageComponent implements OnInit {
                    this.listaRandomContactos.push(result)
                 })
                 console.log(this.listaRandomContactos)
+                this.cargando=false;
 
 
               },
               error: (error) => console.log(error),
-              complete: () => console.log("Peticion completado")
+              complete: () => {
+                console.log("Peticion completado")
+                this.cargando=false;
+              }
 
             }
           )
@@ -102,11 +111,14 @@ export class ContactsPageComponent implements OnInit {
                  this.listaRandomContactos.push(result)
               })
               console.log(this.listaRandomContactos)
-
+              this.cargando=false;
 
             },
             error: (error) => console.log(error),
-            complete: () => console.log("Peticion completado")
+            complete: () => {
+              console.log("Peticion completado")
+              this.cargando=false;
+            }
 
           }
         )
@@ -183,7 +195,7 @@ export class ContactsPageComponent implements OnInit {
       }
     }
     // lanzo la redireccion mas la informacion adicional
-    this.router.navigate(['/home'], navigationExtras)
+    this.router.navigate(['/dashboard'], navigationExtras)
   }
 
 

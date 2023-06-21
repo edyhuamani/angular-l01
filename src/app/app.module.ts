@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
@@ -27,6 +27,21 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 */
 import { MaterialModule } from './modules/material/material.module';
 import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
+import { NavComponent } from './components/nav/nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { MultiplicaPipe } from './pipes/multiplica.pipe';
+import { TasksPageComponent } from './pages/tasks-page/tasks-page.component';
+import { KabanTasksComponent } from './components/kaban-tasks/kaban-tasks.component';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { EjemploAnimacionComponent } from './components/ejemplo-animacion/ejemplo-animacion.component';
+
+/*Los componentes , pipes se declaran aqui*/
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +59,13 @@ import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
     EjemploPipesComponent,
     RandomUserComponent,
     RandomContactPageComponent,
-    NombreCompletoPipe
+    NombreCompletoPipe,
+    NavComponent,
+    DashboardComponent,
+    MultiplicaPipe,
+    TasksPageComponent,
+    KabanTasksComponent,
+    EjemploAnimacionComponent
   ],
   imports: [
     BrowserModule,
@@ -54,9 +75,9 @@ import { NombreCompletoPipe } from './pipes/nombre-completo.pipe';
     //Importamos reactive forms module
     ReactiveFormsModule, //REACTIVE FORMS MODULE
     BrowserAnimationsModule, //REACTIVE FORMS MODULE
-    MatFormFieldModule, //REACTIVE FORMS MODULE
-    MatInputModule, //REACTIVE FORMS MODULE
-    MaterialModule
+    MatFormFieldModule, //REACTIVE FORMS MODULE // SE PASAN A MODULO MATERIAL
+    MatInputModule, //REACTIVE FORMS MODULE // SE PASAN A MODULO MATERIAL
+    MaterialModule, LayoutModule, MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, DragDropModule
     /*
     MatCardModule,
     MatProgressSpinnerModule

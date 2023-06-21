@@ -1,12 +1,11 @@
 <ng-container *ngIf="contacto; else elseTemplate">
   <h1>Contacto : {{ contacto.name!.first }} {{ contacto.name!.last }}</h1>
-  :
   <h2>Nombre:{{ contacto | nombreCompleto }}</h2>
   <h2>Email:{{ contacto.email }}</h2>
 </ng-container>
 <ng-template #elseTemplate>
-  <p>Error en el template</p>
-  <a routerLink="/contacts">Volver </a>
+  <p>Error en el contacto</p>
+  <a routerLink="/dashboard/contacts">Volver </a>
 </ng-template>
 <button (click)="retornarListaContactos()" queryParams="{sexo:'todos'}">
   Regreso a la lista de contactos

@@ -12,7 +12,8 @@ export class AuthService {
     private http:HttpClient
   ) { }
 
-  //
+  // Permite lanzar un request para el login y obtiene un observable
+  // usando http client
   login(email:string,password:string):Observable<any>{
 
     let body={
